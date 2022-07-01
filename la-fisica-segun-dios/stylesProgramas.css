@@ -1,0 +1,504 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+  scroll-behavior: smooth;
+  /* para sacar el highlight cuando tocas algo jeje */
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #333;
+  /* ayuda cuando falta contenido en la pagina para llenar todo el viewport height,
+      lo que hace que el footer no esté en el fondo de la página */
+
+  /* display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between; */
+}
+
+/* header */
+
+.header__title {
+  display: inline-block;
+  font-size: 2.2rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+  margin-bottom: 24px;
+  padding-left: 20px;
+  padding-top: 20px;
+  background: #03001e;
+  background: -webkit-linear-gradient(to right, #ddb7d2, #ec38bc, #7303c0, #06003d);
+  background: linear-gradient(to right, #ddb7d2, #ec38bc, #7303c0, #06003d);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.center {
+  background: #131313;
+  height: 80px;
+  display: flex;
+  /* en desktop ponerlo center que queda mas lindon */
+  justify-content: left;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  /* Position sticky hace que quede ahi siempre el navbar aunque scrollee */
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* Navbar */
+.wrapper {
+  position: fixed;
+  top: -1000px;
+  height: 100%;
+  width: 100%;
+  background: #03001e;
+  background: -webkit-linear-gradient(to right, #ddb7d2, #ec38bc, #7303c0, #06003d);
+  background: linear-gradient(to right, #ddb7d2, #ec38bc, #7303c0, #06003d);
+  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+  /* clip-path: circle(25px at calc(0% + 45px) 45px); */
+  clip-path: circle(25px at calc(100% - 45px) 45px);
+  transition: all 0.3s ease-in-out;
+}
+
+#active:checked ~ .wrapper {
+  clip-path: circle(75%);
+  top: 0;
+}
+
+.menu-btn {
+  display: inline-block;
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  /* left: 20px; */
+  /* top: 20px; */
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  /* background: linear-gradient(375deg, #1cc7d0, #2ede98); */
+  transition: all 0.3s ease-in-out;
+}
+
+#active:checked ~ .menu-btn {
+  background: #fff;
+  color: #c850c0;
+}
+
+#active:checked ~ .menu-btn i:before {
+  content: "\f00d";
+}
+
+.wrapper ul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+
+.wrapper ul li {
+  margin: 15px 0;
+  /* display: inline-block; */
+}
+
+.wrapper ul li a {
+  color: none;
+  text-decoration: none;
+  font-size: 30px;
+  color: #fff;
+  position: relative;
+  line-height: 50px;
+  transition: all 0.2s ease;
+}
+
+/* para que no aparezca el checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+/* desktop */
+@media screen and (min-width: 1025px) {
+  .header__title {
+    padding-left: 0px;
+  }
+
+  .wrapper ul li a:hover {
+    font-size: 35px;
+    color: #fff;
+    text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
+  }
+}
+
+/* para que se centre antes que el desktop, queda mejor en ipad y tablets xd */
+@media screen and (min-width: 740px) {
+  .center {
+    justify-content: center;
+  }
+}
+
+/* content section */
+.content__container {
+  background-color: #333;
+  padding: 2.2rem 4.2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  justify-content: center;
+  align-items: center;
+}
+/* 
+.content__title {
+  margin-bottom: 24px;
+  font-size: 2.2rem;
+  font-family: "Comic Neue", sans-serif;
+  font-weight: 900;
+  background: #03001e;
+  background: -webkit-linear-gradient(to right, #ddb7d2, #ec38bc, #7303c0, #06003d);
+  background: linear-gradient(to right, #ddb7d2, #ec38bc, #7303c0, #06003d);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.content__description {
+  font-family: "Comic Neue";
+  font-size: 1rem;
+  font-weight: lighter;
+  color: #fff;
+} */
+
+/* desktop */
+@media screen and (min-width: 1024px) {
+  .content__container {
+    padding: 4rem 10rem;
+  }
+  .content__description {
+    font-size: 1.3rem;
+  }
+}
+
+/* FAQs */
+.panel {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  max-width: 800px;
+  font-size: 1rem;
+}
+
+.panel p {
+  color: #fff;
+  font-family: "Comic Neue";
+  font-weight: 500;
+}
+
+.panel ol li {
+  color: #fff;
+  font-family: "Comic Neue";
+  font-weight: 500;
+}
+
+.panel ul li {
+  color: #fff;
+  font-family: "Comic Neue";
+  font-weight: 500;
+}
+
+.panel h3 {
+  color: #fff;
+  font-family: "Comic Neue";
+  font-weight: bolder;
+}
+
+.accordion {
+  display: grid;
+  grid-template-columns: 1fr 0.1fr;
+  max-width: 800px;
+  border-radius: 6px;
+  margin: 30px 0;
+  background: -webkit-linear-gradient(to left, #ddb7d2, #ec38bc, #7303c0, #06003d);
+  background: linear-gradient(to left, #ddb7d2, #ec38bc, #7303c0, #06003d);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+
+.accordion i {
+  margin-left: 30px;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .panel {
+    font-size: 1.2rem;
+  }
+
+  .accordion:hover {
+    box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #ec38bc, 0 0 82px #ec38bc, 0 0 92px #ec38bc, 0 0 102px #ec38bc, 0 0 151px #ec38bc;
+  }
+}
+
+/* programs heading */
+
+.programs__heading {
+  padding-top: 4.2rem;
+  text-align: center;
+  font-size: 2.2rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+
+  background: #03001e;
+  background: -webkit-linear-gradient(to right, #ddb7d2, #ec38bc, #7303c0, #06003d);
+  background: linear-gradient(to right, #ddb7d2, #ec38bc, #7303c0, #06003d);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+/* buttons grid */
+.programs {
+  padding: 2.2rem 4.2rem;
+}
+.programs__wrapper {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin-inline: auto;
+  max-width: 800px;
+  width: 100%;
+  height: 100%;
+}
+
+.program__btn {
+  font-family: "Comic Neue";
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  margin-top: 1.4rem;
+  justify-self: center;
+  border-radius: 6px;
+  width: 100px;
+  height: 100px;
+  /* lineheight only works with hardcoded heights to center the text */
+  /* line-height: 100px; */
+  /* display flex with these properties work on an anchor to center the text without hardcoding the height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  background: #131313;
+  transition: 0.15s ease-in;
+}
+
+@media screen and (min-width: 740px) {
+  .programs__wrapper {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 1025px) {
+  .programs__heading {
+    padding-top: 0;
+  }
+
+  .program__btn {
+    margin-top: 2.2rem;
+  }
+
+  .program__btn:hover {
+    transform: scale(1.075);
+    box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #ec38bc, 0 0 82px #ec38bc, 0 0 92px #ec38bc, 0 0 102px #ec38bc, 0 0 151px #ec38bc;
+    font-weight: bolder;
+    transition: 0.15s ease-in;
+  }
+
+  .programs__wrapper {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+/* Results */
+.results__heading {
+  padding-top: 4.2rem;
+  text-align: center;
+  font-size: 2.2rem;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+
+  background: #03001e;
+  background: -webkit-linear-gradient(to right, #ddb7d2, #ec38bc, #7303c0, #06003d);
+  background: linear-gradient(to right, #ddb7d2, #ec38bc, #7303c0, #06003d);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.results {
+  padding: 2.2rem 4.2rem;
+}
+.results__wrapper {
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  margin-inline: auto;
+  max-width: 800px;
+  width: 100%;
+  height: 100%;
+}
+
+.results__square {
+  padding: 10px;
+  font-family: "Comic Neue";
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  margin-top: 1.4rem;
+  justify-self: center;
+  border-radius: 6px;
+  width: 165px;
+  height: 165px;
+  /* lineheight only works with hardcoded heights to center the text */
+  /* line-height: 100px; */
+  /* display flex with these properties work on an anchor to center the text without hardcoding the height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  user-select: none;
+  background: #131313;
+  transition: 0.15s ease-in;
+}
+
+@media screen and (min-width: 740px) {
+  .results__wrapper {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 1025px) {
+  .results__heading {
+    padding-top: 10rem;
+  }
+
+  .results__square {
+    margin-top: 2.2rem;
+  }
+
+  .results__btn:hover {
+    transform: scale(1.075);
+    box-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #ec38bc, 0 0 82px #ec38bc, 0 0 92px #ec38bc, 0 0 102px #ec38bc, 0 0 151px #ec38bc;
+    font-weight: bolder;
+    transition: 0.15s ease-in;
+  }
+
+  .results__wrapper {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
+/* botones volver */
+
+.results__btn--centering {
+  padding-top: 4.2rem;
+  text-align: center;
+}
+
+.results__btn {
+  border-radius: 4px;
+  background: #03001e;
+  background: -webkit-linear-gradient(to right, #ddb7d2, #ec38bc, #7303c0, #06003d);
+  background: linear-gradient(to right, #ddb7d2, #ec38bc, #7303c0, #06003d);
+  font-size: 1.8rem;
+  padding: 20px 60px;
+  border: none;
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+  cursor: pointer;
+  /* position relative porque vamos a ponerle un hover */
+  position: relative;
+  transition: all 0.35s;
+  outline: none;
+}
+
+.results__btn a {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-decoration: none;
+}
+
+.results__btn:after {
+  position: absolute;
+  border-radius: 4px;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ec38bc;
+  transition: all 0.3s;
+}
+
+.results__btn:hover {
+  color: #333;
+}
+
+.results__btn:hover:after {
+  width: 100%;
+}
+/*  */

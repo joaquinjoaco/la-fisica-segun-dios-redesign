@@ -1,0 +1,184 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito Sans", sans-serif;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  filter: blur(1px);
+}
+
+body {
+  background-color: #333;
+  /* ayuda cuando falta contenido en la pagina para llenar todo el viewport height,
+   lo que hace que el footer no esté en el fondo de la página */
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Hero section */
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 90%;
+  text-align: center;
+  padding: 60px;
+}
+
+.hero__img {
+  background: url("images/morgan.png");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  height: 150px;
+  width: 150px;
+  border-radius: 4px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__heading {
+  font-size: 40px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 900;
+  margin-bottom: 24px;
+  padding-top: 20px;
+  background: #03001e;
+  background: -webkit-linear-gradient(to right, #ddb7d2, #ec38bc, #7303c0, #06003d);
+  background: linear-gradient(to right, #ddb7d2, #ec38bc, #7303c0, #06003d);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+/* Disclaimer section */
+.disclaimer__container {
+  background-color: #333;
+  padding: 2.2rem 4.2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  justify-content: center;
+  align-items: center;
+}
+
+.disclaimer__description {
+  font-family: "Comic Neue";
+  font-size: 1rem;
+  font-weight: lighter;
+  color: #fff;
+}
+
+/* estas lineas son opcionales porque le seteo todo en el media query y no aca jeje */
+/* .disclaimer__img {
+  display: none;
+} */
+
+/* desktop */
+@media screen and (min-width: 1024px) {
+  .disclaimer__container {
+    padding: 4rem 10rem;
+  }
+  .disclaimer__description {
+    font-size: 1.3rem;
+  }
+}
+
+/* con esta imagen fixeo la falta de contenido en la tablet de 768px jajajaj y en parte en ipad porque use el padding y font sizing para ocupar un poco mas de espacio en el ipad pro, pero lo de la imágen se me ocurre después de lo del ipad. */
+@media screen and (min-width: 500px) {
+  .disclaimer__img {
+    background: url("images/morgansito.gif");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    height: 250px;
+    width: 250px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3.4rem;
+  }
+}
+
+/* Footer section*/
+.footer__container {
+  background-color: #131313;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+}
+.footer__attribution {
+  font-family: "Comic Neue";
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.footer__container a {
+  font-family: "Comic Neue";
+  color: rgb(113, 140, 214);
+  transition: 0.25s ease;
+}
+
+.footer__container a:hover {
+  color: rgb(59, 111, 255);
+  transition: 0.25s ease;
+}
+
+.website__rights {
+  padding: 0.8rem 0;
+  font-family: "Comic Neue";
+  font-size: 0.9rem;
+  color: #fff;
+}
+/* desktop */
+@media screen and (min-width: 1024px) {
+  .hero__container {
+    padding: 0;
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
+  }
+  .website__rights {
+    font-size: 1.2rem;
+  }
+
+  .footer__attribution {
+    font-size: 1.5rem;
+  }
+
+  .footer__container a {
+    font-size: 1.2rem;
+  }
+
+  .footer__container a:hover {
+    font-size: 1.3rem;
+    transition: 0.25s ease;
+  }
+}

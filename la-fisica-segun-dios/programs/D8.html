@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La física según dios</title>
+    <link rel="stylesheet" href="../stylesProgramas.css" />
+    <link rel="stylesheet" href="../spinner.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  </head>
+  <body>
+    <div class="spinner-wrapper">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- nav -->
+    <div class="center">
+      <input type="checkbox" id="active" />
+      <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+      <h1 class="header__title">Dinámica</h1>
+
+      <div class="wrapper">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../dinamica.html">Dinámica</a></li>
+          <li><a href="../cinematica.html">Cinemática</a></li>
+          <li><a href="../mproyectil.html">M. Proyectil</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      var croza = prompt("Cuerpo A \nCroz: ? \nInclinación: ? \nmasa: ? \n \nCuerpo B \nCroz: ? \nInclinación: ? \nmasa: ?");
+      var incgraa = prompt("Cuerpo A  \nCroz: " + croza + " \nInclinación: ? \nmasa: ? \n \nCuerpo B \nCroz: ? \nInclinación: ? \nmasa: ?");
+      var ma = prompt("Cuerpo A  \nCroz: " + croza + " \nInclinación: " + incgraa + " \nmasa: ? \n \nCuerpo B \nCroz: ? \nInclinación: ? \nmasa: ?");
+      var crozb = prompt("Cuerpo A  \nCroz: " + croza + " \nInclinación: " + incgraa + " \nmasa: " + ma + " \n \nCuerpo B \nCroz: ? \nInclinación: ? \nmasa: ?");
+      var incgrab = prompt("Cuerpo A  \nCroz: " + croza + " \nInclinación: " + incgraa + " \nmasa: " + ma + " \n \nCuerpo B \nCroz: " + crozb + " \nInclinación: ? \nmasa: ?");
+      var mb = prompt("Cuerpo A  \nCroz: " + croza + " \nInclinación: " + incgraa + " \nmasa: " + ma + " \n \nCuerpo B \nCroz: " + crozb + " \nInclinación: " + incgrab + " \nmasa: ?");
+
+      alert("Cuerpo A  \nCroz: " + croza + " \nInclinación: " + incgraa + " \nmasa: " + ma + " \n \nCuerpo B \nCroz: " + crozb + " \nInclinación: " + incgrab + " \nmasa: " + mb);
+
+      var incrada = (Math.PI / 180) * incgraa;
+      var pa = Math.round(ma * 9.8);
+      var pya = Math.round(Math.cos(incrada) * pa);
+      var pxa = Math.round(Math.sin(incrada) * ma);
+      var na = pya;
+      var froza = Math.round(croza * na);
+
+      var incradb = (Math.PI / 180) * incgrab;
+      var pb = Math.round(mb * 9.8);
+      var pyb = Math.round(Math.cos(incradb) * mb);
+      var pxb = Math.round(Math.sin(incradb) * mb);
+      var nb = pyb;
+      var frozb = Math.round(crozb * nb);
+
+      var a = (pxa - pxb - froza - frozb) / (ma + mb);
+      var t = Math.round(-1 * a * mb + pxb - frozb);
+
+      $(function () {
+        $("#ma").html("Masa a: " + ma + " Kg");
+      });
+      $(function () {
+        $("#incgraa").html("Inclinación a: " + incgraa + " °");
+      });
+      $(function () {
+        $("#croza").html("croz a: " + croza);
+      });
+      $(function () {
+        $("#pa").html("pa: " + pa + " N");
+      });
+      $(function () {
+        $("#pya").html("pya: " + pya + " N");
+      });
+      $(function () {
+        $("#pxa").html("pxa: " + pxa + " N");
+      });
+      $(function () {
+        $("#na").html("Normal a: " + na + " N");
+      });
+      $(function () {
+        $("#froza").html("froz a: " + froza + " N");
+      });
+
+      $(function () {
+        $("#mb").html("Masa b: " + mb + " Kg");
+      });
+      $(function () {
+        $("#incgrab").html("Inclinación b: " + incgrab + " °");
+      });
+      $(function () {
+        $("#crozb").html("croz b: " + crozb);
+      });
+      $(function () {
+        $("#pb").html("pb: " + pb + " N");
+      });
+      $(function () {
+        $("#pyb").html("pyb: " + pyb + " N");
+      });
+      $(function () {
+        $("#pxb").html("pxb: " + pxb + " N");
+      });
+      $(function () {
+        $("#nb").html("Normal b: " + nb + " N");
+      });
+      $(function () {
+        $("#frozb").html("froz b: " + frozb + " N");
+      });
+
+      $(function () {
+        $("#a").html("Aceleración: " + a + " m/s²");
+      });
+      $(function () {
+        $("#t").html("t: " + t + " N");
+      });
+    </script>
+
+    <h1 class="results__heading">Resultados</h1>
+    <div class="results">
+      <div class="results__wrapper">
+        <div class="results__square"><div id="ma"></div></div>
+        <div class="results__square"><div id="incgraa"></div></div>
+        <div class="results__square"><div id="croza"></div></div>
+        <div class="results__square"><div id="pa"></div></div>
+        <div class="results__square"><div id="pya"></div></div>
+        <div class="results__square"><div id="pxa"></div></div>
+        <div class="results__square"><div id="na"></div></div>
+        <div class="results__square"><div id="froza"></div></div>
+        <div class="results__square"><div id="mb"></div></div>
+        <div class="results__square"><div id="incgrab"></div></div>
+        <div class="results__square"><div id="crozb"></div></div>
+        <div class="results__square"><div id="pb"></div></div>
+        <div class="results__square"><div id="pyb"></div></div>
+        <div class="results__square"><div id="pxb"></div></div>
+        <div class="results__square"><div id="nb"></div></div>
+        <div class="results__square"><div id="frozb"></div></div>
+        <div class="results__square"><div id="a"></div></div>
+        <div class="results__square"><div id="t"></div></div>
+      </div>
+    </div>
+
+    <div class="results__btn--centering">
+      <button class="results__btn" onClick="window.location.href='#services'">
+        <a href="../dinamica.html">Volver</a>
+      </button>
+    </div>
+    <script src="../spinner.js"></script>
+    <script src="../accordion.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </body>
+</html>

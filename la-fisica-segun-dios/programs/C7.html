@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La física según dios</title>
+    <link rel="stylesheet" href="../stylesProgramas.css" />
+    <link rel="stylesheet" href="../spinner.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  </head>
+  <body>
+    <div class="spinner-wrapper">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- nav -->
+    <div class="center">
+      <input type="checkbox" id="active" />
+      <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+      <h1 class="header__title">Cinemática</h1>
+
+      <div class="wrapper">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../dinamica.html">Dinámica</a></li>
+          <li><a href="../cinematica.html">Cinemática</a></li>
+          <li><a href="../mproyectil.html">M. Proyectil</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      var tr = prompt("Enter Trabajo");
+      var ti = prompt("Enter Tiempo");
+      var p = tr * ti;
+
+      $(function () {
+        $("#tr").html("Trabajo: " + tr + " J");
+      });
+
+      $(function () {
+        $("#ti").html("Tiempo: " + ti + " s");
+      });
+
+      $(function () {
+        $("#p").html("Potencia: " + p + " W");
+      });
+    </script>
+
+    <h1 class="results__heading">Resultados</h1>
+    <div class="results">
+      <div class="results__wrapper">
+        <div class="results__square"><div id="tr"></div></div>
+        <div class="results__square"><div id="ti"></div></div>
+        <div class="results__square"><div id="p"></div></div>
+      </div>
+    </div>
+
+    <div class="results__btn--centering">
+      <button class="results__btn" onClick="window.location.href='#services'">
+        <a href="../cinematica.html">Volver</a>
+      </button>
+    </div>
+    <script src="../spinner.js"></script>
+    <script src="../accordion.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </body>
+</html>

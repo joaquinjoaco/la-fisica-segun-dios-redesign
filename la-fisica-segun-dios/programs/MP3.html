@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La física según dios</title>
+    <link rel="stylesheet" href="../stylesProgramas.css" />
+    <link rel="stylesheet" href="../spinner.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+  </head>
+  <body>
+    <div class="spinner-wrapper">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- nav -->
+    <div class="center">
+      <input type="checkbox" id="active" />
+      <label for="active" class="menu-btn"><i class="fas fa-bars"></i></label>
+      <h1 class="header__title">M. Proyectil</h1>
+
+      <div class="wrapper">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="../dinamica.html">Dinámica</a></li>
+          <li><a href="../cinematica.html">Cinemática</a></li>
+          <li><a href="../mproyectil.html">M. Proyectil</a></li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      var hmax = prompt("Altura Maxima Alcanzada por el Objeto");
+      var tone = prompt("Tiempo del Segmento AB");
+      var ttwo = prompt("Tiempo del Segmento BC");
+      var vx = prompt("Velocidad en el Eje X");
+      var viy = prompt("Velocidad Inicial en el Eje Y");
+      var alfa = (Math.atan(viy / vx) * 180) / Math.PI;
+      var dxone = vx * tone;
+      var dxtwo = vx * ttwo;
+      var dx = dxone + dxtwo;
+      var t = tone * 1 + ttwo * 1;
+      var vfy = viy - 9.8 * t;
+      var beta = (Math.atan(vfy / vx) * 180) / Math.PI;
+      var vi = Math.sqrt(Math.pow(vx, 2) + Math.pow(viy, 2));
+      var vf = Math.sqrt(Math.pow(vx, 2) + Math.pow(vfy, 2));
+      var hq = (vfy / 2) * t;
+      var h = hmax - hq;
+
+      $(function () {
+        $("#dx").html("dx: " + dx + "m");
+      });
+
+      $(function () {
+        $("#dxone").html("dx1: " + dxone + "m");
+      });
+
+      $(function () {
+        $("#dxtwo").html("dx2: " + dxtwo + "m");
+      });
+
+      $(function () {
+        $("#hmax").html("hmax: " + hmax + "m");
+      });
+
+      $(function () {
+        $("#h").html("h: " + h + "m");
+      });
+
+      $(function () {
+        $("#t").html("t: " + t + "s");
+      });
+
+      $(function () {
+        $("#tone").html("t1: " + tone + "s");
+      });
+
+      $(function () {
+        $("#ttwo").html("t2: " + ttwo + "s");
+      });
+
+      $(function () {
+        $("#vx").html("vx: " + vx + "m/s");
+      });
+
+      $(function () {
+        $("#viy").html("viy: " + viy + "m/s");
+      });
+
+      $(function () {
+        $("#vfy").html("vfy: " + vfy + "m/s");
+      });
+
+      $(function () {
+        $("#vi").html("vi: " + vi + "m/s");
+      });
+
+      $(function () {
+        $("#vf").html("vf: " + vf + "m/s");
+      });
+
+      $(function () {
+        $("#alfa").html("alfa: " + alfa + "°");
+      });
+
+      $(function () {
+        $("#beta").html("beta: " + beta + "°");
+      });
+    </script>
+
+    <h1 class="results__heading">Resultados</h1>
+    <div class="results">
+      <div class="results__wrapper">
+        <div class="results__square"><div id="dx"></div></div>
+        <div class="results__square"><div id="dx1"></div></div>
+        <div class="results__square"><div id="dx2"></div></div>
+        <div class="results__square"><div id="hmax"></div></div>
+        <div class="results__square"><div id="h"></div></div>
+        <div class="results__square"><div id="t"></div></div>
+        <div class="results__square"><div id="t1"></div></div>
+        <div class="results__square"><div id="t2"></div></div>
+        <div class="results__square"><div id="vx"></div></div>
+        <div class="results__square"><div id="viy"></div></div>
+        <div class="results__square"><div id="vfy"></div></div>
+        <div class="results__square"><div id="vi"></div></div>
+        <div class="results__square"><div id="vf"></div></div>
+        <div class="results__square"><div id="alfa"></div></div>
+        <div class="results__square"><div id="beta"></div></div>
+      </div>
+    </div>
+
+    <div class="results__btn--centering">
+      <button class="results__btn" onClick="window.location.href='#services'">
+        <a href="../mproyectil.html">Volver</a>
+      </button>
+    </div>
+    <script src="../spinner.js"></script>
+    <script src="../accordion.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </body>
+</html>
